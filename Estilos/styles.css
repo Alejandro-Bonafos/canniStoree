@@ -7,6 +7,110 @@ body{
     background-color: aliceblue;
 }
 
+header h1{
+    font-family: 'Bungee Spice', cursive;
+    font-size: 4rem; 
+    display: flex;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+header .titulo {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: flex-end;
+    background:  url(/img/banner/banner4.jpg) center center/cover no-repeat local;    
+}
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+
+.contenedor-nav{
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;   
+}
+
+ a.nav-link{
+ margin: 0px 55px;
+ font-size: 1.5rem;
+ color: rgb(0, 0, 0);
+ 
+}
+
+ .botton-carrito{
+    display: flex;
+    justify-content: end; 
+    margin-left: 650px;
+    margin-top: 10px;
+    width: 70%;
+    height: auto;
+   
+}
+
+button{
+    border: 0ch;
+}
+.botton-carrito img{
+    width: 100%;
+    height: 40px;
+}
+.botton-carrito span{
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-nav a{
+    text-decoration: none;
+}
+
 section{
     display: flex;
     width: 100%;
@@ -15,27 +119,21 @@ section{
     flex-wrap: wrap;
 }
 
-h1{
-    display: flex;
-    justify-content: center;
-    font-size: 5rem;
-    margin-bottom: 10px;
-}
-
 .card{
-    background-color: rgb(168, 192, 184);
     width: 300px;
     height: auto;
     margin: 15px;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .card img{
     display: flex;
     margin: auto;
-    width: 85%;
-    height: 290px;
+    width: 70%;
+    height: 240px;
 }
+
 .card h4{
     text-align: center;
     margin-top: 5px;;
@@ -47,6 +145,7 @@ h1{
     text-align: center;
     margin-top: 5px; 
 }
+
 .card button{
     background-color: rgb(135, 236, 126);
     display: flex;
@@ -96,4 +195,17 @@ background-color: rgb(211, 211, 207);
     font-size: 1.3rem;
     margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo-carrito{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+.titulo-carrito h2{
+    font-size: 3rem ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    
 }

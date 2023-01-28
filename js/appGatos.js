@@ -32,14 +32,14 @@ const productos = [
         nombre:'Alimento Tiernitos',
         precio: '2000',
         descipcion: 'Para perros adultos',
-        image:'img/tiernitos.jpg'
+        image:'/img/tiernitos.jpg'
     },
     {
         id:6,
-        nombre:'Alimento Tiernitos',
+        nombre:'Alimento GATOS',
         precio: '2000',
         descipcion: 'Para perros adultos',
-        image:'img/tiernitos.jpg',
+        image:'/img/tiernitos.jpg',
         
     },
     {
@@ -60,6 +60,7 @@ const productos = [
 let carrito = [];
 
 const actualizarCarro = (carrito) => {
+    debugger;
     let carroContenedor = document.querySelector('#carro');
 
     let container = document.querySelector('#carroContenedor');
@@ -71,6 +72,7 @@ const actualizarCarro = (carrito) => {
     let div = document.createElement('div');
     div.setAttribute('id','carroContenedor');
     div.innerHTML += `<h2>Carrito de compras</h2>`;
+    console.log(carrito);
     for (const productos of carrito) {
         div.innerHTML += `
         <div class="items-carro">
@@ -88,14 +90,14 @@ const actualizarCarro = (carrito) => {
  const cargarEvento = () =>
  {  
     let botones=document.querySelectorAll('.button');
+    debugger
     for (const button of botones)
      {
-        
      button.addEventListener('click', ()=>{
-        
+        debugger
         let prod = carrito.find(productos => productos.id == button.id);        
        if(prod) {
-        prod.cantidad ++;
+        prod.cantidad++;
        }
        else
        {
@@ -114,10 +116,8 @@ const actualizarCarro = (carrito) => {
          carrito.push(nuevoProducto);
         }
        
-        
        }
-       actualizarCarro (carrito);
-
+       actualizarCarro(carrito);
     })
         
     }
@@ -141,25 +141,3 @@ const cargarProductos = (productos) =>{
     cargarEvento();
 }
 cargarProductos(productos);
-
-
-const inputFiltrar = document.querySelector("input")
-
-function filtrarProductos() { //FILTRAR PRODUCTOS EN LA TABLA INGRESANDO PARTE DEL NOMBRE
-    debugger
-    inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
-    if (inputFiltrar.value !== "") {
-        const resultado = productos.filter(productos => productos.nombre.includes(inputFiltrar.value))
-              if (resultado.length === 0) {
-                console.clear()
-                console.warn("No se encontraron productos.")
-                cargarProductos(productos)
-              } else {
-                cargarProductos(resultado)
-              }
-    } else {
-        cargarProductos(productos)
-    }
-}
-
-inputFiltrar.addEventListener("input", filtrarProductos) 
